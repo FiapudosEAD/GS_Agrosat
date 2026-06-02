@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: agrosat
+
+  datasource:
+    url: # Aqui vai a url do banco
+    username: # Aqui vai o usuário (RM...)
+    password: # Aqui vai a senha (data de aniversário)
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+    show-sql: true
+
+jwt:
+  secret: # Aqui vai o token secret do JWT tem q gerar
+  expiration: 3600000 # 1 hora
