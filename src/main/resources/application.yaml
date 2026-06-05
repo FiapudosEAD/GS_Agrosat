@@ -16,3 +16,12 @@ spring:
 jwt:
   secret: # Aqui vai o token secret do JWT tem q gerar
   expiration: 3600000 # 1 hora
+
+mqtt:
+  broker:
+    url: tcp://localhost:1883
+  client:
+    id: agrosat-backend
+  topic:
+    filter: agrosat/+/+/+
+  qos: 1

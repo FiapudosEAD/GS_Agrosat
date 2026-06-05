@@ -1,6 +1,7 @@
 package br.com.fiap.agrosat.repository;
 
 import br.com.fiap.agrosat.model.entity.Leitura;
+import br.com.fiap.agrosat.model.entity.Sensor;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -35,4 +36,6 @@ public interface LeituraRepository
             @Param("inicio") LocalDateTime inicio,
             @Param("fim") LocalDateTime fim
     );
+
+    List<Leitura> findTop3BySensorOrderByRegistradoEmDesc(Sensor sensor);
 }

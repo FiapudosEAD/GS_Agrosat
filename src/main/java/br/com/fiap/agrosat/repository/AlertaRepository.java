@@ -1,6 +1,7 @@
 package br.com.fiap.agrosat.repository;
 
 import br.com.fiap.agrosat.model.entity.Alerta;
+import br.com.fiap.agrosat.model.entity.Talhao;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -27,4 +28,11 @@ public interface AlertaRepository
             @Param("alertaId") Long alertaId,
             @Param("usuarioId") Long usuarioId
     );
+
+    @Query("""
+        SELECT COUNT(a) > 0
+        FROM Alerta a
+        WHERE a.talhao = :talhao AND a.tipo = :tipo AND a.lido = 0
+    """)
+    boolean existsByTalhaoAndTipoAndLidoFalse(@Param("talhao") Talhao talhao, @Param("tipo") String tipo);
 }
