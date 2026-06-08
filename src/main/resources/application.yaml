@@ -25,3 +25,14 @@ mqtt:
   topic:
     filter: agrosat/+/+/+
   qos: 1
+
+# Springdoc OpenAPI (Swagger UI)
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: method
+    tags-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  show-actuator: false
