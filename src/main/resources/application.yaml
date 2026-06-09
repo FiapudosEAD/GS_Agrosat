@@ -16,3 +16,23 @@ spring:
 jwt:
   secret: eff6d494bd125addc10eee441a8e54140e5f4e856f9ad42e91bfd7370e4f245b # Aqui vai o token secret do JWT tem q gerar
   expiration: 3600000 # 1 hora
+
+mqtt:
+  broker:
+    url: tcp://localhost:1883
+  client:
+    id: agrosat-backend
+  topic:
+    filter: agrosat/+/+/+
+  qos: 1
+
+# Springdoc OpenAPI (Swagger UI)
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+    operations-sorter: method
+    tags-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  show-actuator: false
